@@ -1,6 +1,6 @@
 using System;
 
-namespace ghaTest
+namespace apiExample.Api
 {
     public class WeatherForecast
     {

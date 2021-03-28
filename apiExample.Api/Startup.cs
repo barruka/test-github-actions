@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ghaTest
+namespace apiExample.Api
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace ghaTest
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ghaTest", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "apiExample.Api", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace ghaTest
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ghaTest v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "apiExample.Api v1"));
             }
 
             app.UseHttpsRedirection();
