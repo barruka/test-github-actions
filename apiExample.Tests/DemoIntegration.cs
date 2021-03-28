@@ -26,10 +26,10 @@ namespace apiExample.Tests
             var context = new CustomerContext(optionsBuilder.Options);
 
             // Just to make sure: Delete all existing customers in the DB
-            //            await context.Database.EnsureDeletedAsync();
-            //            await context.Database.EnsureCreatedAsync();      << para no ejecutar el comando de crear la BD a pelo
-            context.Customers.RemoveRange(await context.Customers.ToArrayAsync());
-            await context.SaveChangesAsync();
+            await context.Database.EnsureDeletedAsync();
+            await context.Database.EnsureCreatedAsync();
+            //context.Customers.RemoveRange(await context.Customers.ToArrayAsync());
+            //await context.SaveChangesAsync();
 
             // Create Controller
             var controller = new CustomersController(context);
